@@ -9,7 +9,7 @@ RUN apt update \
     && apt install -y --no-install-recommends openssh-server \
     && echo "root:Docker!" | chpasswd
 
-COPY sshd_config /etc/sshd_config
+#COPY sshd_config /etc/sshd_config
 # ------------------------
 
 
