@@ -9,17 +9,17 @@ RUN apt update \
     && apt install -y --no-install-recommends openssh-server \
     && echo "root:Docker!" | chpasswd
 
-#COPY sshd_config /etc/sshd_config
+COPY sshd_config /etc/sshd_config
 # ------------------------
 
 
 EXPOSE 2222 80
 
-#COPY init_container.sh /bin/
+COPY init_container.sh /bin/
 
-#RUN chmod 755 /bin/init_container.sh
+RUN chmod 755 /bin/init_container.sh
 
-#CMD ["/bin/init_container.sh"]
+CMD ["/bin/init_container.sh"]
 
 RUN adduser --disabled-password --gecos "" jsreport && \
     apt-get update && \
