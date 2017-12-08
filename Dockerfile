@@ -15,11 +15,11 @@ RUN apt update \
 
 EXPOSE 2222 80
 
-COPY init_container.sh /bin/
+#COPY init_container.sh /bin/
 
-RUN chmod 755 /bin/init_container.sh
+#RUN chmod 755 /bin/init_container.sh
 
-CMD ["/bin/init_container.sh"]
+#CMD ["/bin/init_container.sh"]
 
 RUN adduser --disabled-password --gecos "" jsreport && \
     apt-get update && \
